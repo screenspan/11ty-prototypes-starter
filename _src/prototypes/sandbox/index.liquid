@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandbox</title>
+</head>
+<body>
+
+  <h1>Sandbox</h1>
+
+  <h2>Included:</h2>
+  
+  <output>
+    {% include './prototypes/sandbox/test.js' %}
+  </output>
+  
+
+  <h2>Minified:</h2>
+  
+  <output>
+{% capture js %}
+    {% include './prototypes/sandbox/test.js' %}
+{% endcapture %}
+{{ js | jsmin }}
+  </output>
+  
+
+</body>
+</html>
