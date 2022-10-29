@@ -5,10 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="./../../favicon.svg">
+    <link rel="icon" type="image/png" href="./../../favicon.png">
+    {% if headincludes %}
+      {{ headincludes }}
+    {% endif %}
+
+    {% if prism %}
+      {% capture prism_css %}
+        {% include 'css/prism.css' %}
+      {% endcapture %}
+      <style>
+        {{ prism_css | cssmin }}
+      </style>
+    {% endif%}
   </head>
   
-  <body>{{content}}</body>
+  <body>
+  
+    {{content}}
+  
+    {% if prism %}
+      {% capture prism_js %}
+        {% include 'js/prism.js' %}
+      {% endcapture %}
+      <script>
+        {{ prism_js | jsmin }}
+      </script>
+    {% endif%}
+  
+  </body>
   
   </html>
