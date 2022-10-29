@@ -4,7 +4,7 @@ const { minify } = require("terser");
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("_src/images/*");
   eleventyConfig.addPassthroughCopy({ "_src/_data/*": "data/" });
-  eleventyConfig.addPassthroughCopy({ "_src/css/*.css": "css/" });
+  // eleventyConfig.addPassthroughCopy({ "_src/css/*.css": "css/" });
   eleventyConfig.addPassthroughCopy({ "_src/favicon/*": "./" });
   eleventyConfig.addPassthroughCopy("_src/prototypes/**/*.css");
   eleventyConfig.addPassthroughCopy("_src/prototypes/**/*.js");
