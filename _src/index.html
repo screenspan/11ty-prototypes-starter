@@ -1,34 +1,13 @@
+---
+title: "Prototypes"
+layout: layouts/main
+---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-
-  <section>
-    <h2>Pages</h2>
-    
-    <ul>
-      {% for page in collections.page %}
-      <li><a href="{{ page.url }}">{{ page.data.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </section>
-
-  <section>
-    <h2>Prototypes</h2>
-    
-    <ul>
-      {% for prototype in collections.prototype %}
-      <li><a href="{{ prototype.url }}">{{ prototype.fileSlug }}</a></li>
-      {% endfor %}
-    </ul>
-  </section>
-
-
-</body>
-</html>
+<h1>Prototypes</h1>
+<ul>
+  {% for i in collections.all %}
+  {% if i.data.listOnPrototypesPage %}
+  <li><a href="{{ i.url }}">{{ i.data.title }}</a></li>
+  {% endif %}
+  {% endfor %}
+</ul>
