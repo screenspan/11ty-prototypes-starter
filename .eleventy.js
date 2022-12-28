@@ -1,7 +1,11 @@
 const CleanCSS = require("clean-css");
 const { minify } = require("terser");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
+
+  eleventyConfig.addPlugin(syntaxHighlight);
+
   eleventyConfig.addPassthroughCopy("_src/images/*");
   eleventyConfig.addPassthroughCopy({ "_src/_data/*": "data/" });
   // eleventyConfig.addPassthroughCopy({ "_src/css/*.css": "css/" });
